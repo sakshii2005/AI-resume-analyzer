@@ -1,29 +1,26 @@
-/**
- * App — Root layout: Navbar, main content area, Footer.
- * Wraps the dashboard in a consistent SaaS-style layout.
- */
-import Navbar from './components/Navbar'
-import Dashboard from './pages/Dashboard'
-
-function Footer() {
-  const year = new Date().getFullYear()
-  return (
-    <footer className="bg-white border-t border-gray-200 mt-auto" role="contentinfo">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-        <p className="text-center text-sm text-gray-500">
-          © {year} Resume Analyzer. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  )
-}
+import { Navigate, Route, Routes } from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
+import AnalyzerPage from './pages/AnalyzerPage'
+import ProtectedRoute from './components/ProtectedRoute'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-indigo-200">
-      <Navbar />
-      <Dashboard />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
+      <Route
+        path="/app"
+        element={
+          <ProtectedRoute>
+            <AnalyzerPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/analyze" element={<Navigate to="/app" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }

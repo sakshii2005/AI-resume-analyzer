@@ -1,5 +1,5 @@
 /**
- * Dashboard — Main page: text input, analyze action, and result cards.
+ * Dashboard - Main page: text input, analyze action, and result cards.
  * Manages loading state, API errors, and passes data to presentational components.
  */
 import { useState } from 'react'
@@ -25,6 +25,7 @@ export default function Dashboard() {
     setLoading(true)
     setError(null)
     setResult(null)
+
     try {
       const { data } = await axios.post(`${API_BASE}/analyze`, { text: text.trim() })
       setResult(data)
@@ -41,19 +42,16 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-indigo-100">
-    <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-12">
+    <div className="flex flex-col">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-slate-800 tracking-tight">AI Resume Intelligence</h1>
+          <p className="mt-3 text-slate-500 max-w-2xl mx-auto">
+            Get instant insights into sentiment, tone, ATS strength, and keyword density -
+            powered by transformer-based NLP models.
+          </p>
+        </div>
 
-      {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-slate-800 tracking-tight">
-          AI Resume Intelligence
-        </h1>
-        <p className="mt-3 text-slate-500 max-w-2xl mx-auto">
-          Get instant insights into sentiment, tone, ATS strength, and keyword density —
-          powered by transformer-based NLP models.
-        </p>
-      </div>
         <section className="mb-10">
           <TextInputCard
             value={text}
@@ -79,7 +77,7 @@ export default function Dashboard() {
                 className="w-10 h-10 border-2 border-primary-200 border-t-primary-600 rounded-full animate-spin"
                 aria-hidden
               />
-              <p className="text-sm text-gray-600">Analyzing your resume…</p>
+              <p className="text-sm text-gray-600">Analyzing your resume...</p>
             </div>
           </div>
         )}
