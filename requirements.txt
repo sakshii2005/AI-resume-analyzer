@@ -1,0 +1,24 @@
+# AI Resume Analyzer — FastAPI backend
+# Install: pip install -r requirements.txt
+# Run: uvicorn app.main:app --reload
+
+# API
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# NLP (HuggingFace)
+transformers>=4.35.0
+torch>=2.0.0
+accelerate>=0.24.0
+
+# Keyword extraction & resume parsing
+nltk>=3.8.0
+pyresparser>=1.0.6
+spacy>=3.5.0
+
+# PDF/text extraction (used by pyresparser)
+pdfminer.six>=20221105
+
+# Optional: for form/file upload later
+python-multipart>=0.0.6
