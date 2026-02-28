@@ -9,12 +9,12 @@ export default function Navbar() {
       role="banner"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-        <h1 className="text-xl font-semibold text-gray-800 text-center">
-          Resume Analyzer
-        </h1>
-        <p className="text-sm text-gray-500 text-center mt-0.5">
-          AI-powered resume insights
-        </p>
+      <h1 className="text-xl font-semibold tracking-tight">
+  Resume<span className="text-indigo-600">AI</span>
+</h1>
+<p className="text-xs text-slate-500">
+  AI-powered resume intelligence
+</p>
       </div>
     </header>
   )

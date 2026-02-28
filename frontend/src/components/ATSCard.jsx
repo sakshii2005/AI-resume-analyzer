@@ -10,7 +10,7 @@ export default function ATSCard({ atsScore }) {
   const barColor = score >= 70 ? 'bg-emerald-500' : score >= 40 ? 'bg-primary-500' : 'bg-amber-500'
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-shadow hover:shadow-md">
+    <div className="bg-white/90 border border-slate-200 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6">
       <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">
         ATS keyword strength
       </h2>

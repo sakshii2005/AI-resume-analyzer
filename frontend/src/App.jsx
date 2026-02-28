@@ -20,7 +20,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-indigo-200">
       <Navbar />
       <Dashboard />
       <Footer />

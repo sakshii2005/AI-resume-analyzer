@@ -41,9 +41,20 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
-        <section className="mb-8">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-indigo-100">
+    <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-12">
+
+      {/* Hero Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-slate-800 tracking-tight">
+          AI Resume Intelligence
+        </h1>
+        <p className="mt-3 text-slate-500 max-w-2xl mx-auto">
+          Get instant insights into sentiment, tone, ATS strength, and keyword density —
+          powered by transformer-based NLP models.
+        </p>
+      </div>
+        <section className="mb-10">
           <TextInputCard
             value={text}
             onChange={setText}
