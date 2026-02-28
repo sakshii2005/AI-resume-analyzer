@@ -26,4 +26,4 @@ export default function ATSCard({ atsScore }) {
       </p>
     </div>
   )
-}
+} //end
